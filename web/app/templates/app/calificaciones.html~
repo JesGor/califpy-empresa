@@ -1,0 +1,9 @@
+{% if lista_calificaciones %}
+    <ul>
+    {% for calificacion in lista_calificaciones %}
+        <li>{{ calificacion.alumno}} - {{calificacion.calificacion }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay calificaciones para la empresa.</p>
+{% endif %}

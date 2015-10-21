@@ -1,0 +1,16 @@
+<h1>Eliminar</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if lista_empresas %}
+<form action="{% url 'eliminar_empresa_seleccionada' %}" method="post">
+{% csrf_token %}
+{% for empresa in lista_empresas %}
+	 <input type="radio" name="empresa" id="empresa{{ forloop.counter }}" value="{{ empresa.id }}" />
+    <label for="empresa{{ forloop.counter }}">{{ empresa.nombre }}</label><br />
+    <br />
+{% endfor %}
+<input type="submit" value="Eliminar" />
+</form>
+{% else %}
+    <p>No hay empresas guardadas.</p>
+{% endif %}

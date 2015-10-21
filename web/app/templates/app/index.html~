@@ -1,0 +1,9 @@
+{% if lista_empresas %}
+    <ul>
+    {% for empresa in lista_empresas %}
+        <li>{{ empresa.nombre }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay empresas guardadas.</p>
+{% endif %}

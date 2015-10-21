@@ -1,0 +1,17 @@
+<h1>Crear una empresa</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'crear_empresa' %}" method="post">
+{% csrf_token %}
+	<label for="nombre">Nombre de la empresa:</label>
+    <input type="text" name="nombre" id="nombre" />
+    <br />
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" name="ciudad" id="ciudad" />
+    <br />
+    <label for="nombre">Sector:</label>
+    <input type="text" name="sector" id="sector" />
+    <br />
+<input type="submit" value="Crear" />
+</form>
