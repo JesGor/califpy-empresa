@@ -1,3 +1,7 @@
+"""
+Modulo encargado de registrar las urls y su view asociada.
+"""
+
 from django.conf.urls import url
 
 from . import views

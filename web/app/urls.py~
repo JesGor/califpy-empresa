@@ -1,3 +1,7 @@
+"""
+Módulo encargado de registrar las urls y su view asociada.
+"""
+
 from django.conf.urls import url
 
 from . import views
@@ -12,5 +16,5 @@ urlpatterns = [
     url(r'^crear_calificacion$', views.crear_calificacion, name='crear_calificacion'),
     url(r'^crear_calificacion/nueva_calificacion$', views.nueva_calificacion, name='nueva_calificacion'),
     url(r'^(?P<empresa_id>[0-9]+)/eliminar_calificacion$', views.eliminar_calificacion, name='eliminar_calificacion'),
-    url(r'^(?P<empresa_id>[0-9]+)/eliminar_calificacion/eliminar_calificacion_seleccionada$', views.eliminar_calificacion_seleccionada, name='eliminar_calificacion_seleccionada'),
+    url(r'^(?P<empresa_id>[0-9]+)/eliminar_calificacion_seleccionada$', views.eliminar_calificacion_seleccionada, name='eliminar_calificacion_seleccionada'),
 ]

@@ -1,3 +1,10 @@
+"""
+Módulo que indica las opciones del panel de admin.
+"""
+
 from django.contrib import admin
 
-# Register your models here.
+from .models import Empresa, Calificacion
+
+admin.site.register(Empresa)
+admin.site.register(Calificacion)
