@@ -1,7 +1,10 @@
+<h1>{{ empresa.nombre }}</h1>
+<h3>Listado de calificaciones:</h3>
+<a href="{% url 'eliminar_calificacion' empresa.id %}">Eliminar una calificación</a>
 {% if lista_calificaciones %}
     <ul>
     {% for calificacion in lista_calificaciones %}
-        <li>{{ calificacion.alumno}} - {{calificacion.calificacion }}</li>
+        <li>{{calificacion.calificacion }} - {{ calificacion.alumno}} </li>
     {% endfor %}
     </ul>
 {% else %}

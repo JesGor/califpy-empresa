@@ -1,9 +1,19 @@
+<h1>Página web de calificación de empresas</h1>
+<a href="{% url 'crear_empresa' %}">Crear una empresa</a>
+|
+<a href="{% url 'eliminar_empresa' %}">Eliminar una empresa</a>
+
+<a href="{% url 'crear_calificacion' %}">Añadir una calificación</a>
+
+<h3>Listado:</h3>
 {% if lista_empresas %}
     <ul>
     {% for empresa in lista_empresas %}
-        <li>{{ empresa.nombre }}</li>
+        <li><a href="{% url 'calificaciones' empresa.id %}">{{ empresa.nombre }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No hay empresas guardadas.</p>
 {% endif %}
+
+*Pulse en una empresa para ver sus calificaciones.

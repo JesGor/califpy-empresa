@@ -9,7 +9,7 @@
     <label for="empresa{{ forloop.counter }}">{{ empresa.nombre }}</label><br />
     <br />
 {% endfor %}
-<input type="submit" value="Crear" />
+<input type="submit" value="Eliminar" />
 </form>
 {% else %}
     <p>No hay empresas guardadas.</p>

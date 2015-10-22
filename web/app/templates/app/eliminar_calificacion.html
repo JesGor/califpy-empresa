@@ -1,0 +1,16 @@
+<h1>Eliminar una calificación de {{ empresa.nombre }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if lista_calificaciones %}
+<form action="{% url 'eliminar_calificacion_seleccionada' empresa.id%}" method="post">
+{% csrf_token %}
+{% for calificacion in lista_calificaciones %}
+	 <input type="radio" name="calif" id="calificacion{{ forloop.counter }}" value="{{ calificacion.id }}" />
+    <label for="calificacion{{ forloop.counter }}">{{ calificacion.calificacion }} - {{ calificacion.alumno }}</label><br />
+    <br />
+{% endfor %}
+<input type="submit" value="Eliminar" />
+</form>
+{% else %}
+    <p>No hay calificaciones para esta empresa.</p>
+{% endif %}
