@@ -101,7 +101,9 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="app.views-module.html#crear_empresa" class="summary-sig-name">crear_empresa</a>(<span class="summary-sig-arg">request</span>)</span><br />
-      Permite acceder al formulario donde se crea la empresa</td>
+      Muestra el formulario para crear una empresa si no ha sido invocado 
+      desde un formulario con metodo POST, crea la empresa y la almacena en
+      caso contrario.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="app.views-pysrc.html#crear_empresa">source&nbsp;code</a></span>
             
@@ -117,26 +119,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="app.views-module.html#nueva_empresa" class="summary-sig-name">nueva_empresa</a>(<span class="summary-sig-arg">request</span>)</span><br />
-      Crea una empresa con los datos recogidos de un formulario y si sucede
-      algun error vuelve a mostrar el formulario con un error.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="app.views-pysrc.html#nueva_empresa">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
           <td><span class="summary-sig"><a href="app.views-module.html#eliminar_empresa" class="summary-sig-name">eliminar_empresa</a>(<span class="summary-sig-arg">request</span>)</span><br />
-      Muestra el template con el formulario para eliminar empresas</td>
+      Muestra el template con el formulario para eliminar empresas si no ha
+      sido lanzada desde un formulario, de ser asi borra una empresa 
+      seleccionada mediante el formulario que la lanza.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="app.views-pysrc.html#eliminar_empresa">source&nbsp;code</a></span>
             
@@ -152,47 +138,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="app.views-module.html#eliminar_empresa_seleccionada" class="summary-sig-name">eliminar_empresa_seleccionada</a>(<span class="summary-sig-arg">request</span>)</span><br />
-      Elimina una empresa con los datos obtenidos a traves de un 
-      formulario.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="app.views-pysrc.html#eliminar_empresa_seleccionada">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
           <td><span class="summary-sig"><a href="app.views-module.html#crear_calificacion" class="summary-sig-name">crear_calificacion</a>(<span class="summary-sig-arg">request</span>)</span><br />
       Permite acceder al formulario para crear una calificacion para una 
-      empresa</td>
+      empresa si no es lanzado desde un formulario con metodo POST, en caso
+      contrario crea una calificacion asignandola a una empresa</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="app.views-pysrc.html#crear_calificacion">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="app.views-module.html#nueva_calificacion" class="summary-sig-name">nueva_calificacion</a>(<span class="summary-sig-arg">request</span>)</span><br />
-      Crea una nueva calificacion con los datos obtenivos a traves de un 
-      formulario.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="app.views-pysrc.html#nueva_calificacion">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -209,28 +160,10 @@
           <td><span class="summary-sig"><a href="app.views-module.html#eliminar_calificacion" class="summary-sig-name">eliminar_calificacion</a>(<span class="summary-sig-arg">request</span>,
         <span class="summary-sig-arg">empresa_id</span>)</span><br />
       Permite acceder al formulario para eliminar calificaciones de una 
-      determinada empresa</td>
+      determinada empresa, en caso de ser lanzada por un formulario con 
+      metodo POST se borra una calificacion de una empresa asociada.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="app.views-pysrc.html#eliminar_calificacion">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="app.views-module.html#eliminar_calificacion_seleccionada" class="summary-sig-name">eliminar_calificacion_seleccionada</a>(<span class="summary-sig-arg">request</span>,
-        <span class="summary-sig-arg">empresa_id</span>)</span><br />
-      Borra una calificacion seleccionada desde un formulario asociada a 
-      una empresa</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="app.views-pysrc.html#eliminar_calificacion_seleccionada">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -311,30 +244,11 @@
     </td>
   </tr></table>
   
-  <p>Permite acceder al formulario donde se crea la empresa</p>
+  <p>Muestra el formulario para crear una empresa si no ha sido invocado 
+  desde un formulario con metodo POST, crea la empresa y la almacena en 
+  caso contrario.</p>
   <p>:param request: peticion http :return: devuelve un render con request 
-  al formulario de creacion de empresa</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="nueva_empresa"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">nueva_empresa</span>(<span class="sig-arg">request</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="app.views-pysrc.html#nueva_empresa">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Crea una empresa con los datos recogidos de un formulario y si sucede 
-  algun error vuelve a mostrar el formulario con un error.</p>
-  <p>:param request: peticion http :return: devuelve una respuesta http</p>
+  al template de creacion de empresa</p>
   <dl class="fields">
   </dl>
 </td></tr></table>
@@ -353,31 +267,11 @@
     </td>
   </tr></table>
   
-  <p>Muestra el template con el formulario para eliminar empresas</p>
+  <p>Muestra el template con el formulario para eliminar empresas si no ha 
+  sido lanzada desde un formulario, de ser asi borra una empresa 
+  seleccionada mediante el formulario que la lanza.</p>
   <p>:param request: peticion http :return: devuelve un render con un 
-  request al formulario para eliminar empresas</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="eliminar_empresa_seleccionada"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">eliminar_empresa_seleccionada</span>(<span class="sig-arg">request</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="app.views-pysrc.html#eliminar_empresa_seleccionada">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Elimina una empresa con los datos obtenidos a traves de un formulario.
-  Devuelve una respuesta en caso afirmativo o sino vuelve al formulario 
-  para la eliminacion de empresas.</p>
-  <p>:param request: peticion http :return: devuelve una respuesta http</p>
+  request al template de eliminar empresa</p>
   <dl class="fields">
   </dl>
 </td></tr></table>
@@ -397,30 +291,10 @@
   </tr></table>
   
   <p>Permite acceder al formulario para crear una calificacion para una 
-  empresa</p>
+  empresa si no es lanzado desde un formulario con metodo POST, en caso 
+  contrario crea una calificacion asignandola a una empresa</p>
   <p>:param request: peticion http :return: devuelve un render con request 
   al template de creacion de calificaciones</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="nueva_calificacion"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">nueva_calificacion</span>(<span class="sig-arg">request</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="app.views-pysrc.html#nueva_calificacion">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Crea una nueva calificacion con los datos obtenivos a traves de un 
-  formulario.</p>
-  <p>:param request: peticion http :return: devuelve una respuesta http</p>
   <dl class="fields">
   </dl>
 </td></tr></table>
@@ -441,33 +315,11 @@
   </tr></table>
   
   <p>Permite acceder al formulario para eliminar calificaciones de una 
-  determinada empresa</p>
+  determinada empresa, en caso de ser lanzada por un formulario con metodo 
+  POST se borra una calificacion de una empresa asociada.</p>
   <p>:param request: peticion http :param empresa_id: id de la empresa que 
   tiene la calificacion :return: devuelve un render con un request al 
   template de eliminacion de calificaciones.</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="eliminar_calificacion_seleccionada"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">eliminar_calificacion_seleccionada</span>(<span class="sig-arg">request</span>,
-        <span class="sig-arg">empresa_id</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="app.views-pysrc.html#eliminar_calificacion_seleccionada">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Borra una calificacion seleccionada desde un formulario asociada a una
-  empresa</p>
-  <p>:param request: peticion http :param empresa_id: id de la empresa que 
-  tiene la calificacion :return: devuelve una respuesta http</p>
   <dl class="fields">
   </dl>
 </td></tr></table>
@@ -522,7 +374,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Oct 22 20:29:59 2015
+    Generated by Epydoc 3.0.1 on Fri Oct 23 19:41:29 2015
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
