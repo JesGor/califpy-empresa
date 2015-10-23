@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    {% block head %}
+    <title>Califpy-empresa</title>
+    {% endblock %}
+</head>
+<body>
+	<h1>Página web de calificación de empresas</h1>
+	<div id="menu">
+	<a href="{% url 'index' %}">Inicio</a>
+	|
+	<a href="{% url 'crear_empresa' %}">Crear una empresa</a>
+	|
+	<a href="{% url 'eliminar_empresa' %}">Eliminar una empresa</a>
+	|
+	<a href="{% url 'crear_calificacion' %}">Añadir una calificación</a>
+	</div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2015 by <a href="https://github.com/JesGor">JPL</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>

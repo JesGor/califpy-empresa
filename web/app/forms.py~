@@ -1,0 +1,22 @@
+from django import forms
+from app.models import Empresa, Calificacion
+
+class crearEmpresaForm(forms.ModelForm):
+	
+	class Meta:
+		model = Empresa
+		fields = ('nombre','ciudad','sector')
+		
+class crearCalificacionForm(forms.ModelForm):
+	class Meta:
+		model = Calificacion
+		fields = ('alumno','calificacion','empresa')
+		
+class eliminarEmpresaForm(forms.Form):
+	
+	CHOICES=( ('a','a'), ('b','b'))
+	CHOICE=[]
+	for empresa in Empresa.objects.all():
+		CHOICE.append(empresa.nombre)
+	empresa = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect())
+

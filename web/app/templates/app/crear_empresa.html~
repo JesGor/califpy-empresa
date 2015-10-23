@@ -1,17 +1,23 @@
-<h1>Crear una empresa</h1>
+{% extends "app/base.html" %}
+{% block content %}
+	<h3>Crear una empresa</h3>
+	{% if message %}
+		<p><strong>{{ message }}</strong></p>
+	{% else %}
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+		<form action="{% url 'crear_empresa' %}" method="post">
+		<dl>
+		{% csrf_token %}
 
-<form action="{% url 'crear_empresa' %}" method="post">
-{% csrf_token %}
-	<label for="nombre">Nombre de la empresa:</label>
-    <input type="text" name="nombre" id="nombre" />
-    <br />
-    <label for="ciudad">Ciudad:</label>
-    <input type="text" name="ciudad" id="ciudad" />
-    <br />
-    <label for="nombre">Sector:</label>
-    <input type="text" name="sector" id="sector" />
-    <br />
-<input type="submit" value="Crear" />
-</form>
+		{% for field in form.visible_fields %}
+			<dt>{{ field.label}}</dt>
+			<dd>{{ field }}
+				{{ field.errors }}
+			</dd>
+		{% endfor %}
+
+		</dl>
+		<p><input type="submit" value="Crear" />
+		</form>
+	{% endif %}
+{% endblock %}

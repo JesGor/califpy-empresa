@@ -1,24 +1,25 @@
-<h1>Crear una calificacion</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-{% if lista_empresas %}
-<form action="{% url 'nueva_calificacion' %}" method="post">
-{% csrf_token %}
-	<label for="alumno">Alumno:</label>
-    <input type="text" name="alumno" id="alumno" />
-    <br />
-    <label for="calif">Ciudad:</label>
-    <input type="text" name="calif" id="calif" />
-    <br />
-    <label for="empresa">Empresa:</label>
-    <select name="empresa">
-    {% for empresa in lista_empresas %}
-  		<option value="{{ empresa.id }}">{{ empresa.nombre }}</option>
-	{% endfor %}
-	</select> 
-    <br />
-<input type="submit" value="Crear" />
-</form>
-{% else %}
-    <p>No hay empresas guardadas, no puedes añadir ninguna calificacion.</p>
-{% endif %}
+
+{% extends "app/base.html" %}
+{% block content %}
+	<h3>Crear una calificación</h3>
+	{% if message %}
+		<p><strong>{{ message }}</strong></p>
+	{% else %}
+
+		<form action="{% url 'crear_calificacion' %}" method="post">
+		<dl>
+		{% csrf_token %}
+
+		{% for field in form.visible_fields %}
+			<dt>{{ field.label}}</dt>
+			<dd>{{ field }}
+				{{ field.errors }}
+			</dd>
+		{% endfor %}
+
+		</dl>
+		<p><input type="submit" value="Crear" />
+		</form>
+	{% endif %}
+{% endblock %}

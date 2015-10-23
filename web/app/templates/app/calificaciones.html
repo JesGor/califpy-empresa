@@ -1,12 +1,16 @@
-<h1>{{ empresa.nombre }}</h1>
-<h3>Listado de calificaciones:</h3>
-<a href="{% url 'eliminar_calificacion' empresa.id %}">Eliminar una calificación</a>
-{% if lista_calificaciones %}
-    <ul>
-    {% for calificacion in lista_calificaciones %}
-        <li>{{calificacion.calificacion }} - {{ calificacion.alumno}} </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No hay calificaciones para la empresa.</p>
-{% endif %}
+{% extends "app/base.html" %}
+{% block content %}
+	<h3>{{ empresa.nombre }}</h3>
+	<h3>Listado de calificaciones:</h3>
+	
+	{% if lista_calificaciones %}
+		<ul>
+		{% for calificacion in lista_calificaciones %}
+		    <li>{{calificacion.calificacion }} - {{ calificacion.alumno}} </li>
+		{% endfor %}
+		</ul>
+		<a href="{% url 'eliminar_calificacion' empresa.id %}">Eliminar una calificación</a>
+	{% else %}
+		<p>No hay calificaciones para la empresa.</p>
+	{% endif %}
+{% endblock %}
