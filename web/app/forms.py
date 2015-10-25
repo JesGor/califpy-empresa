@@ -1,14 +1,29 @@
+"""
+Modulo dedicado a definir los diferentes formularios que se utilizan en los templates para almacenar la informacion de las empresas y las calificaciones.
+"""
+
 from django import forms
 from app.models import Empresa, Calificacion
 
 class crearEmpresaForm(forms.ModelForm):
-	
+	"""
+	Clase del formulario para introducir los datos de una empresa. En el recoge todos los atributos del modelo de la empresa
+	"""
 	class Meta:
+		"""
+		Clase para definir que atributos de Empresa se recogen en el formulario.
+		"""
 		model = Empresa
 		fields = ('nombre','ciudad','sector')
 		
 class crearCalificacionForm(forms.ModelForm):
+	"""
+	Clase del formulario para introducir los datos de una calificacion. En el recoge todos los atributos del modelo de la calificacion asociada a una empresa
+	"""
 	class Meta:
+		"""
+		Clase para definir que atributos de Calificacion se recogen en el formulario.
+		"""
 		model = Calificacion
 		fields = ('alumno','calificacion','empresa')
 	

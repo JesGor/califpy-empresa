@@ -3,10 +3,10 @@ Modulo con todas las views de la aplicacion que contienen las funcionalidades de
 """
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from .models import Empresa, Calificacion
-from .forms import *
 
+from .forms import crearEmpresaForm, crearCalificacionForm
 def index(request):
 	"""
 	Lanza el template con el index de la aplicacion, que muestra un listado de empresas.
@@ -14,6 +14,7 @@ def index(request):
 	:param request: peticion http
 	:return: devuelve un render con request al index
 	"""
+	
 	lista_empresas = Empresa.objects.order_by('nombre')
 	context = { 'lista_empresas' : lista_empresas }
 	return render(request, 'app/index.html', context)

@@ -10,7 +10,7 @@
 		{% csrf_token %}
 
 		{% for field in form.visible_fields %}
-			<dt>{{ field.label}}</dt>
+			<dt>{{ field.label }}</dt>
 			<dd>{{ field }}
 				{{ field.errors }}
 			</dd>

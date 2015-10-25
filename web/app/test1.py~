@@ -1,0 +1,12 @@
+from models import Empresa
+from django.utils import unittest
+from .forms import crearEmpresaForm, crearCalificacionForm
+
+class empresaTestCase(unittest.TestCase):
+	def test_crear_empresa(self):
+		form = crearEmpresaForm()
+		form.fields['nombre']='test'
+		form.fields['ciudad']='ciudadtest'
+		form.fields['sector']='sectortest'
+		self.assertTrue(form.is_valid(), False)	
+		print("Empresa creada, test superado")	
