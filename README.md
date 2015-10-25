@@ -1,11 +1,19 @@
 # califpy-empresa
 Aplicación web para la calificación de empresas (Ejercicio de la asignatura IV) creada con **python** y **django**
 
-## Uso
+![Estado de integración continua en Travis](https://travis-ci.org/JesGor/califpy-empresa.svg?branch=master)
 
-Si queremos hacerla funcionar tan solo tenemos que descargarla, acceder al directorio */califpy-empresa* y activar el entorno (lo he subido con el entorno que se desarrolló, versión de python 2.7.6):
+## Instalación / Uso
 
-`$source bin/activate`
+Si queremos hacerla funcionar tan solo tenemos que descargarla, e introducir los siguientes comandos:
+
+Instalar python en caso de no tenerlo.
+`$ sudo apt-get install python`
+
+Instalar el paquete y dependencias
+`$ cd web`
+`$ pip install -r requirements.txt`
+`$ python setup.py install`
 
 Después tan solo tenemos que acceder al directorio */califpy-empresa/web* y ejecutar la aplicación:
 
