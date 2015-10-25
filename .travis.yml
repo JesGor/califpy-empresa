@@ -2,7 +2,9 @@ language: python
 python:
  - "2.7"
 # command to install dependencies
-install: "pip install -r web/requirements.txt"
+install:
+ - python web/setup.py install
+ - pip install -r web/requirements.txt
 
 before_script: "export DJANGO_SETTINGS_MODULE=app.settings"
 # command to run tests
